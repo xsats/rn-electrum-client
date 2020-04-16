@@ -19,6 +19,10 @@ Electrum Protocol Client for React Native
 
 ## usage
 
+```
+npm install --save photon-electrum-client
+```
+
 Relies on `react-native-tcp` so it should be already installed and linked in RN project. `net` should be provided from outside, this library wont do `require('net')`.
 For RN it should be in `shim.js`:
 
