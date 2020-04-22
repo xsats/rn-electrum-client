@@ -8,6 +8,10 @@
   },
   "dependencies": {},
   "devDependencies": {},
+  "react-native": {
+    "net": "@hawkingnetwork/react-native-tcp",
+    "tls": "@hawkingnetwork/react-native-tcp/tls"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/photon-sdk/photon-electrum-client.git"
