@@ -8,6 +8,9 @@
   },
   "dependencies": {},
   "devDependencies": {},
+  "peerDependencies": {
+    "@hawkingnetwork/react-native-tcp": "^3.3.2"
+  },
   "react-native": {
     "net": "@hawkingnetwork/react-native-tcp",
     "tls": "@hawkingnetwork/react-native-tcp/tls"
