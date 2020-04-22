@@ -1,6 +1,6 @@
 {
   "name": "@photon-sdk/rn-electrum-client",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Electrum protocol client for React Native & Node.js",
   "main": "index.js",
   "scripts": {
