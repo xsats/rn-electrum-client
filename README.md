@@ -20,7 +20,7 @@ Electrum Protocol Client for React Native
 ## usage
 
 ```
-npm install --save photon-electrum-client
+npm install --save @photon-sdk/rn-electrum-client
 ```
 
-Relies on `photon-electrum-client` so it should be already installed and linked in RN project.
+Relies on `@photon-sdk/react-native-tcp` so it should be already installed and linked in RN project.
