@@ -9,11 +9,11 @@
   "dependencies": {},
   "devDependencies": {},
   "peerDependencies": {
-    "@hawkingnetwork/react-native-tcp": "^3.3.2"
+    "photon-react-native-tcp": "^4.0.0"
   },
   "react-native": {
-    "net": "@hawkingnetwork/react-native-tcp",
-    "tls": "@hawkingnetwork/react-native-tcp/tls"
+    "net": "photon-react-native-tcp",
+    "tls": "photon-react-native-tcp/tls"
   },
   "repository": {
     "type": "git",
