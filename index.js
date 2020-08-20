@@ -62,9 +62,13 @@ class ElectrumClient extends Client {
     }
     this.timeout = setTimeout(() => {
       if (this.timeLastCall !== 0 && new Date().getTime() > this.timeLastCall + 5000) {
+        const pingTimer = setTimeout(() => {
+          this.onError(new Error('keepalive ping timeout'));
+        }, 9000);
         this.server_ping().catch((reason) => {
           console.log('keepalive ping failed because of', reason);
-        });
+          clearTimeout(pingTimer);
+        }).then(() => clearTimeout(pingTimer));
       }
     }, 5000);
   }
