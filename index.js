@@ -37,10 +37,8 @@ class ElectrumClient extends Client {
   onClose() {
     super.onClose();
     const list = [
-      'server.peers.subscribe',
-      'blockchain.numblocks.subscribe',
       'blockchain.headers.subscribe',
-      'blockchain.address.subscribe',
+      'blockchain.scripthash.subscribe',
     ];
     list.forEach(event => this.subscribe.removeAllListeners(event));
     setTimeout(() => {
@@ -136,17 +134,14 @@ class ElectrumClient extends Client {
   blockchainScripthash_subscribe(scripthash) {
     return this.request('blockchain.scripthash.subscribe', [scripthash]);
   }
-  blockchainBlock_getHeader(height) {
-    return this.request('blockchain.block.get_header', [height]);
-  }
   blockchainBlock_headers(start_height, count) {
     return this.request('blockchain.block.headeres', [start_height, count]);
   }
   blockchainEstimatefee(number) {
     return this.request('blockchain.estimatefee', [number]);
   }
-  blockchainHeaders_subscribe(raw) {
-    return this.request('blockchain.headers.subscribe', [raw || false]);
+  blockchainHeaders_subscribe() {
+    return this.request('blockchain.headers.subscribe', []);
   }
   blockchain_relayfee() {
     return this.request('blockchain.relayfee', []);
@@ -165,36 +160,6 @@ class ElectrumClient extends Client {
   }
   mempool_getFeeHistogram() {
     return this.request('mempool.get_fee_histogram', []);
-  }
-  // ---------------------------------
-  // protocol 1.1 deprecated method
-  // ---------------------------------
-  blockchainUtxo_getAddress(tx_hash, index) {
-    return this.request('blockchain.utxo.get_address', [tx_hash, index]);
-  }
-  blockchainNumblocks_subscribe() {
-    return this.request('blockchain.numblocks.subscribe', []);
-  }
-  // ---------------------------------
-  // protocol 1.2 deprecated method
-  // ---------------------------------
-  blockchainBlock_getChunk(index) {
-    return this.request('blockchain.block.get_chunk', [index]);
-  }
-  blockchainAddress_getBalance(address) {
-    return this.request('blockchain.address.get_balance', [address]);
-  }
-  blockchainAddress_getHistory(address) {
-    return this.request('blockchain.address.get_history', [address]);
-  }
-  blockchainAddress_getMempool(address) {
-    return this.request('blockchain.address.get_mempool', [address]);
-  }
-  blockchainAddress_listunspent(address) {
-    return this.request('blockchain.address.listunspent', [address]);
-  }
-  blockchainAddress_subscribe(address) {
-    return this.request('blockchain.address.subscribe', [address]);
   }
 }
 
