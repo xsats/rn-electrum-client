@@ -6,14 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "peerDependencies": {
-    "@photon-sdk/react-native-tcp": "^6.0.0"
-  },
-  "react-native": {
-    "net": "@photon-sdk/react-native-tcp",
-    "tls": "@photon-sdk/react-native-tcp/tls"
+  "dependencies": {
+    "react-native-tcp-socket": "^3.7.1"
   },
   "repository": {
     "type": "git",
